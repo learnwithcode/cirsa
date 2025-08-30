@@ -1,0 +1,60 @@
+# ======================================
+# CodeIgniter 3 .gitignore
+# ======================================
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+.idea/
+.vscode/
+
+# Vendor / Composer (if used)
+vendor/
+composer.lock
+
+# Node / Frontend (if used)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Cache & logs
+application/cache/*
+!application/cache/index.html
+application/logs/*
+!application/logs/index.html
+writable/
+storage/
+
+# Session files
+sessions/*
+!sessions/index.html
+
+# Uploads (user content – usually not versioned)
+uploads/*
+!uploads/index.html
+
+# Environment-specific configs
+.env
+.env.*
+application/config/development/
+application/config/testing/
+application/config/staging/
+application/config/production/
+
+# Database
+*.sql
+*.sqlite
+*.db
+
+# System files (you should keep CI's system/ in composer or vendor, not Git)
+system/
+
+# ======================================
+# End of CI3 .gitignore
+# ======================================
