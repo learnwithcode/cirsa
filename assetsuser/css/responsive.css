@@ -1,0 +1,735 @@
+@media (max-width:1365px) {
+    .setting-main .setting-details>div:nth-child(2)>div {
+        width: 30%;
+    }
+    
+    .footer-bottom-main .footer-content ul li:nth-child(3) a {
+  
+    flex-wrap: wrap;
+}
+#help-sum-main {
+        padding-bottom: 0;
+    }
+    .dashboard-main .right-content .right-main .heading-main {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #help-sum-main .col-33 {
+        width: 33.33% !important;
+        margin-bottom: 30px;
+    }
+
+    #finance-card-main .col-50 {
+        width: 50% !important;
+    }
+    .Network-main .card-bottom>img {
+        height: 99px;
+    }
+
+    #finance-card-main .row .col-25:nth-child(2),.col-25:nth-child(1) {
+        margin-bottom: 30px;
+    }
+
+    .finance-card-main .card-box-main .card-content {
+        width: 95%;
+    }
+
+    .finance-card-main .card-box-main .card-img img {
+        height: 160px;
+        object-fit: inherit !important;
+    }
+}
+
+@media (max-width:1199px) {
+    .dashboard-main .site-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 222;
+        height: 100%;
+        width: 280px;
+        animation: sitebar-animation 0.5s linear;
+        display: none;
+    }
+
+    .profile-tabs .crm-p-image {
+        width: 48.5%;
+    }
+
+    .dashboard-main .right-content .right-main>.heading-main>.right-content {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .dashboard-main>.right-content {
+        width: 100%;
+        left: 0;
+    }
+
+    .dashboard-main.show-bar>.right-content {
+        animation: inherit;
+    }
+
+    .footer-top-content {
+        flex-wrap: wrap;
+    }
+
+    .footer-top-content .right-content {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .dashboard-main.show-bar .site-bar {
+        animation: sitebar-animation 0.5s linear;
+        display: unset;
+        position: fixed;
+    }
+
+    .footer-bottom-main {
+        width: 100%;
+    }
+
+    #footer-main::after {
+        left: -30px;
+    }
+
+    /* profile-css-start */
+
+    #profile-main .overview-main .bottom-content {
+        gap: 30px;
+    }
+
+    /* profile-css-end */
+
+    .email-main > .Emai-in-sidebar{
+        display: none;
+    }
+
+    .email-main > .right-content {
+        width: 100%;
+    }
+
+    .work-slider-main .work-slider-content a {
+        width: 100%;
+    }
+
+}
+
+@media (max-width:991px) {
+
+    .header-content .left-content .search-bar {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+
+    #Impo-News-main .heading-main h2 {
+        font-size: 20px;
+    }
+
+    .imp-box-main .img-box-content h2,h3 {
+        font-size: 18px;
+    }
+
+
+    .header-content .right-content ul li.search-bar {
+        display: unset;
+    }
+
+    .header-content .left-content .search-bar {
+        display: none;
+    }
+
+    .header-content .left-content .search-bar.active {
+        display: flex;
+    }
+
+    .header-content .right-content ul li img.profile-img {
+        width: 30px;
+    }
+
+    .header-content>.right-content>ul> li.active-profile a {
+    display: none !important;
+}
+
+    .header-content ul li:last-child>.fa {
+        display: none;
+    }
+
+    .header-content>.right-content>ul>li a .fa {
+        font-size: 15px;
+    }
+
+    .header-content .left-content .search-bar .fa-search {
+        font-size: 15px;
+    }
+
+    .work-slider-main>div {
+        max-width: 100%;
+    }
+
+    /* profile-css-start */
+    .about-exp-main {
+        flex-wrap: wrap;
+    }
+
+    .right-content>.heading-content .fa {
+        font-size: 15px;
+    }
+
+    .right-content>.heading-content {
+        padding: 10px 15px;
+    }
+
+
+
+    #profile-main .profile-img-content .profile-content>h2 {
+        font-size: 24px;
+    }
+
+    #profile-main .profile-img-content .cir-cover-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    #profile-main .profile-img-content .profile-content {
+        margin-top: 80px;
+    }
+
+    .about-exp-main .left-content {
+        width: 100%;
+    }
+
+    .about-exp-main>.right-content {
+        width: 100%;
+    }
+
+    #profile-main .overview-main .bottom-content {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    /* profile-css-end */
+
+
+    .plan-main>.right-content>div:nth-child(4)>.heading-content>.left-content h2 {
+        font-size: 24px;
+    }
+
+    h5 {
+        font-size: 16px;
+    }
+
+    h4{
+        font-size: 16px;
+    }
+
+    .right-content>.heading-content p {
+        font-size: 14px;
+    }
+
+    .dashboard-main .right-main .statement-content .left-content>div:nth-child(2) {
+        gap: 10px;
+    }
+
+    .dashboard-main .right-content .right-main .order-statement {
+        width: 100%;
+        overflow: auto;
+    }
+
+    .dashboard-main .right-content .right-main .order-statement table.table {
+        width: 100%;
+        table-layout: auto;
+        overflow: scroll;
+    }
+
+    .dashboard-main .right-main .btn-group>ul {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .dashboard-main>.right-content>.heading-bottom>ul {
+        gap: 20px;
+    }
+
+    
+    .profile-tabs .crm-p-image {
+        width: 48%;
+    }
+
+    
+    #help-sum-main .col-33 {
+        width: 33.33% !important;
+    }
+}
+
+@media (max-width:768px) {
+    .header-content .right-content ul li a .full-screen {
+        width: 15px;
+    }
+
+    .header-content .right-content ul {
+        gap: 12px;
+    }
+
+    .header-content .right-content ul li:nth-child(4) a {
+        margin-right: 10px;
+    }
+
+    .dashboard-main .right-content .right-main .work-process {
+        flex-wrap: wrap;
+    }
+
+    .dashboard-main .right-content .right-main .work-process .work-process-left {
+        width: 100%;
+    }
+
+    .dashboard-main .right-content .right-main .heading-main {
+        margin-top: 10px;
+    }
+
+    .about-exp-main .left-content .about-content>.heading-main {
+        margin-top: 0;
+    }
+
+    .dashboard-main .right-content .right-main .heading-main p {
+        font-size: 16px;
+    }
+
+    #help-sum-main .col-50 {
+        width: 50% !important;
+    }
+
+    .footer-top-content .left-content h2 {
+        font-size: 20px;
+    }
+
+    .footer-top-content .left-content h3 {
+        font-size: 16px;
+    }
+
+    .footer-top-content {
+        justify-content: start;
+        gap: 50px;
+    }
+
+    .footer-top-content .right-content .link-content h3 {
+        font-size: 18px;
+    }
+
+    .footer-top-content .right-content .link-content ul li a {
+        padding: 7px 0;
+    }
+
+
+    .dashboard-main .right-content .right-main .work-process .work-compl .work-in-process strong {
+        font-size: 24px;
+    }
+
+    .footer-top-content {
+        padding-bottom: 40px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .dashboard-main .right-content .right-main>.heading-main>.right-content>div>ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .dashboard-main .right-content .right-main>.heading-main>.right-content>div {
+        flex-wrap: wrap;
+        gap: 9px;
+    }
+
+    .slick-initialized .slick-slide {
+        padding: 0 10px !important;
+    }
+
+    .work-slider-main>div .slick-track .slick-slide {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .imp-box-main {
+        flex-wrap: wrap;
+    }
+
+    .imp-box-main .img-box-content {
+        width: 100%;
+    }
+
+    .footer-midile-content {
+        flex-wrap: wrap;
+    }
+
+
+    .footer-bottom-main .footer-content ul li a {
+        font-size: 15px;
+    }
+
+    .footer-midile-content .software-links a p {
+        font-size: 15px;
+    }
+
+    #Impo-News-main .heading-main {
+        margin-top: 40px;
+    }
+
+    .imp-box-main .img-box-content:nth-child(3) div:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+        height: calc(100% - 60px);
+    }
+
+    #footer-main {
+        margin-top: 40px;
+    }
+
+    #Impo-News-main .heading-main h2 {
+        margin-bottom: 5px;
+    }
+
+
+    button {
+        font-size: 14px !important;
+    }
+
+    /* profile-css-start */
+
+    #profile-main .profile-img-content .profile-content p {
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        gap: 10px;
+    }
+
+    .about-exp-main>.right-content .heading-content {
+        flex-wrap: wrap;
+        padding: 0;
+        margin-bottom: 30px;
+        gap: 15px;
+    }
+
+    .about-exp-main .right-content>div:nth-child(4) .heading-content>div p:nth-child(3) {
+        font-size: 16px;
+    }
+
+    .about-exp-main .left-content .business-content>.heading-top h2 {
+        font-size: 20px;
+    }
+
+    /* profile-css-ends */
+
+
+    .setting-main .setting-details>div:nth-child(2)>div {
+        width: 47%;
+    }
+
+    .dashboard-input-left {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .plan-main .heading-content>.left-content {
+        width: 100%;
+    }
+
+    .plan-main .heading-content>.right-content {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .plan-main .heading-content>.right-content>.left-content {
+        margin-bottom: 0;
+    }
+
+    .plan-main .heading-content>.right-content>.left-content>ul>li:last-child>a {
+        margin-bottom: 0;
+    }
+
+    .plan-main>.right-content>div>div:last-child {
+        gap: 30px;
+    }
+
+    .plan-main .heading-content>.right-content>.right-content {
+        margin-bottom: 0;
+    }
+
+    .plan-main .heading-content>.right-content>.right-content>a:last-child {
+        margin-top: 0;
+    }
+
+    .plan-main>.right-content>div:nth-child(4)>.heading-content>.left-content {
+        width: 47%;
+    }
+
+    .dashboard-main .right-content .right-main .statement-content{
+        flex-wrap: wrap;
+    }
+
+    .dashboard-main .right-main .statement-content .left-content {
+        width: 100%;
+    }
+
+    .dashboard-main .right-main .statement-content .right-content {
+        width: 100%;
+    }
+
+    .dashboard-main .right-main .statement-content .left-content>div:nth-child(2) {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-main>.right-content>.heading-bottom{
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-main>.right-content>.heading-bottom>ul:nth-child(1) li:last-child {
+        display: none;
+    }
+
+    .dashboard-main>.right-content>.heading-bottom>ul:nth-child(1) > li:nth-last-of-type(2),li:nth-last-of-type(5),li:nth-last-of-type(4),li:nth-last-of-type(3) {
+        display: none;
+    }
+
+    .dashboard-main>.right-content>.heading-bottom>ul:nth-child(1) > li:nth-last-of-type(2), li:nth-last-of-type(5), li:nth-last-of-type(4), li:nth-last-of-type(3)
+
+ .right-state-main .heading-bottom ul:nth-child(1) > li:nth-last-of-type(2), li:nth-last-of-type(5), li:nth-last-of-type(4), li:nth-last-of-type(3) {
+        display: flex;
+    }
+
+    .email-main > .right-content > table.table > tbody > tr td {
+        display: flex;
+    }
+
+    .email-main > .right-content > table.table > tbody > tr td:nth-child(2) {
+        padding: 0 15px;
+    }
+
+    .move-content h2 {
+        font-size: 18px;
+    }
+
+    .profile-tabs ul#tabs-nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 0;
+    }
+
+    #signin-main .signin-content {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .signin-content .left-content{
+        width: 100%;
+        padding: 40px 0 0 0;
+    }
+
+    .signin-content .right-content {
+        width: 100%;
+    }
+
+    .signin-content h2 {
+        font-size: 25px;
+    }
+
+    #main-poup .modalPopup {
+        width: 90%;
+        height: 140px;
+    }
+
+    .singIn-main .signin-content .right-content {
+        height: 100%;
+    }
+
+    form#main-form .form-group input {
+        width: 47%;
+    }
+
+    #finance-card-main .col-100 {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+
+    .finance-card-main .Finance-main .card-bottom {
+        margin-bottom: 50px !important;
+    }
+
+    #finance-card-main .row .col-25:last-child {
+        margin-bottom: 0;
+    }
+
+}
+
+@media (max-width:575px) {
+    
+    .footer-bottom-main {
+    padding: 15px 0;
+}
+
+.footer-bottom-main .footer-content ul {
+    gap: 20px !important;
+}
+
+.footer-bottom-main .footer-content ul li a {
+    font-size: 12px;
+}
+
+.footer-bottom-main .footer-content ul li a .fa {
+    font-size: 18px;
+}
+
+.footer-bottom-main .footer-content ul li:nth-child(3) a {
+    width: 40px !important;
+    height: 40px !important;
+}
+    .header-content .left-content .search-bar {
+        width: 100%;
+        z-index: 11;
+        height: 100%;
+        left: 0;
+        gap: 10px;
+    }
+
+    .header-content .left-content .search-bar .fa-times {
+        display: unset;
+    }
+
+    .dashboard-main .site-bar {
+        width: 100%;
+    }
+
+    .finance-card-main .card-box-main .card-img img {
+        object-fit: inherit;
+        width: 100%;
+        height: 170px;
+    }
+    .heading-content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .header-content .left-content .menu-bar a img {
+        width: 85px;
+    }
+
+    .dashboard-main .site-bar .heading-main>div> .logo-img {
+        width: 70px;
+    }
+
+    .about-exp-main .left-content .connection-content>.heading-content {
+        padding-top: 0;
+    }
+
+    .profile-main {
+        width: 100%;
+        top: 80px;
+    }
+
+    .footer-bottom-main .footer-content ul li:nth-child(3) a {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer-bottom-main .footer-content ul {
+        gap: 20px;
+    }
+
+    .footer-midile-content .software-links {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .footer-midile-content .software-links a {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .footer-midile-content .software-links a br {
+        display: none;
+    }
+
+    .setting-main .setting-details>div:nth-child(2) {
+        flex-wrap: wrap;
+    }
+
+    .setting-main .setting-details:nth-child(1)>div:nth-child(2) {
+        flex-wrap: wrap;
+    }
+
+    #header-main .header-content .logo a p {
+        font-size: 12px;
+    }
+
+    .dashboard-main .right-content .right-main .plan-heading {
+        flex-wrap: wrap;
+    }
+
+    .about-exp-main .left-content .about-content img {
+        width: 140px;
+    }
+
+    .plan-main>.right-content>div:nth-child(3)>.heading-content>div:nth-child(2) {
+        flex-wrap: wrap;
+    }
+
+    .plan-main>.right-content>div:nth-child(3)>.heading-content>div:nth-child(2)>div {
+        width: 100%;
+    }
+
+    .plan-main>.right-content>div:nth-child(4)>.heading-content>.left-content {
+        width: 100%;
+    }
+
+    .dashboard-main .right-content .right-main .planpoup>div {
+        flex-wrap: wrap;
+    }
+
+    .dashboard-main>.right-content > .heading-content {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .profile-tabs .crm-p-image {
+        width: 100%;
+    }
+
+    .profile-tabs ul#tabs-nav li {
+        width: 100%;
+    }
+
+    form#main-form .form-group input {
+        width: 100%;
+    } 
+
+    #help-sum-main .col-100 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width:439px) {
+    .setting-main .setting-details>div:nth-child(2)>div {
+        width: 100%;
+    }
+
+    .dashboard-main .right-content .right-main>.heading-main>.right-content>div>ul > li {
+        width: 100%;
+    }
+
+    .dashboard-main .right-content .right-main>.heading-main>.right-content>div>ul > li a {
+        justify-content: center;
+    }
+
+    #support-main .top-content {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}

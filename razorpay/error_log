@@ -1,0 +1,120 @@
+[30-Dec-2020 15:17:42 UTC] PHP Warning:  require(config.php): failed to open stream: No such file or directory in /home/booe/public_html/login/razorpay/pay.php on line 3
+[30-Dec-2020 15:17:42 UTC] PHP Fatal error:  require(): Failed opening required 'config.php' (include_path='.:/opt/cpanel/ea-php71/root/usr/share/pear') in /home/booe/public_html/login/razorpay/pay.php on line 3
+[30-Dec-2020 15:20:27 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The api key provided is invalid in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:123
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 401, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(24): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 123
+[30-Dec-2020 15:31:05 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The api key provided is invalid in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:123
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 401, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(24): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 123
+[30-Dec-2020 15:33:20 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The api key provided is invalid in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:123
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 401, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(24): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 123
+[03-Jan-2021 17:38:27 UTC] PHP Notice:  Array to string conversion in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 129
+[03-Jan-2021 17:38:27 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\ServerError: The server did not send back a well-formed response. 
+Server Response: Array in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:131
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(199): Razorpay\Api\Request->throwServerError(Array, 500)
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(96): Razorpay\Api\Request->verifyErrorFormat(Array, 500)
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 500, Object(Requests_Response))
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#5 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#6 /home/ in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 131
+[03-Jan-2021 17:51:37 UTC] PHP Notice:  Undefined variable: post in /home/booe/public_html/login/razorpay/pay.php on line 6
+[03-Jan-2021 17:51:52 UTC] PHP Notice:  Undefined variable: _post in /home/booe/public_html/login/razorpay/pay.php on line 6
+[03-Jan-2021 18:06:06 UTC] PHP Notice:  Undefined index: ORDER_ID in /home/booe/public_html/login/razorpay/pay.php on line 8
+[03-Jan-2021 18:06:06 UTC] PHP Notice:  Undefined index: mob in /home/booe/public_html/login/razorpay/pay.php on line 9
+[03-Jan-2021 18:06:06 UTC] PHP Notice:  Undefined index: name in /home/booe/public_html/login/razorpay/pay.php on line 10
+[03-Jan-2021 18:06:06 UTC] PHP Notice:  Undefined index: TXN_AMOUNT in /home/booe/public_html/login/razorpay/pay.php on line 11
+[03-Jan-2021 18:06:06 UTC] PHP Notice:  Undefined index: uid in /home/booe/public_html/login/razorpay/pay.php on line 12
+[03-Jan-2021 18:06:07 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The amount must be atleast INR 1.00 in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:120
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 400, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(37): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 120
+[03-Jan-2021 18:06:21 UTC] PHP Notice:  Undefined index: ORDER_ID in /home/booe/public_html/login/razorpay/pay.php on line 8
+[03-Jan-2021 18:06:21 UTC] PHP Notice:  Undefined index: mob in /home/booe/public_html/login/razorpay/pay.php on line 9
+[03-Jan-2021 18:06:21 UTC] PHP Notice:  Undefined index: name in /home/booe/public_html/login/razorpay/pay.php on line 10
+[03-Jan-2021 18:06:21 UTC] PHP Notice:  Undefined index: TXN_AMOUNT in /home/booe/public_html/login/razorpay/pay.php on line 11
+[03-Jan-2021 18:06:21 UTC] PHP Notice:  Undefined index: uid in /home/booe/public_html/login/razorpay/pay.php on line 12
+[03-Jan-2021 18:06:22 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The amount must be atleast INR 1.00 in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:120
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 400, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(37): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 120
+[03-Jan-2021 18:31:15 UTC] PHP Notice:  Undefined index: ORDER_ID in /home/booe/public_html/login/razorpay/pay.php on line 8
+[03-Jan-2021 18:31:15 UTC] PHP Notice:  Undefined index: mob in /home/booe/public_html/login/razorpay/pay.php on line 9
+[03-Jan-2021 18:31:15 UTC] PHP Notice:  Undefined index: name in /home/booe/public_html/login/razorpay/pay.php on line 10
+[03-Jan-2021 18:31:15 UTC] PHP Notice:  Undefined index: TXN_AMOUNT in /home/booe/public_html/login/razorpay/pay.php on line 11
+[03-Jan-2021 18:31:15 UTC] PHP Notice:  Undefined index: uid in /home/booe/public_html/login/razorpay/pay.php on line 12
+[03-Jan-2021 18:31:17 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The amount must be atleast INR 1.00 in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:120
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 400, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(44): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 120
+[04-Jan-2021 05:09:16 UTC] PHP Notice:  Undefined index: ORDER_ID in /home/booe/public_html/login/razorpay/pay.php on line 8
+[04-Jan-2021 05:09:16 UTC] PHP Notice:  Undefined index: mob in /home/booe/public_html/login/razorpay/pay.php on line 9
+[04-Jan-2021 05:09:16 UTC] PHP Notice:  Undefined index: name in /home/booe/public_html/login/razorpay/pay.php on line 10
+[04-Jan-2021 05:09:16 UTC] PHP Notice:  Undefined index: TXN_AMOUNT in /home/booe/public_html/login/razorpay/pay.php on line 11
+[04-Jan-2021 05:09:16 UTC] PHP Notice:  Undefined index: uid in /home/booe/public_html/login/razorpay/pay.php on line 12
+[04-Jan-2021 05:09:17 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The amount must be atleast INR 1.00 in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:120
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 400, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(44): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 120
+[05-Jan-2021 12:28:11 UTC] PHP Notice:  Undefined index: ORDER_ID in /home/booe/public_html/login/razorpay/pay.php on line 8
+[05-Jan-2021 12:28:11 UTC] PHP Notice:  Undefined index: mob in /home/booe/public_html/login/razorpay/pay.php on line 9
+[05-Jan-2021 12:28:11 UTC] PHP Notice:  Undefined index: name in /home/booe/public_html/login/razorpay/pay.php on line 10
+[05-Jan-2021 12:28:11 UTC] PHP Notice:  Undefined index: TXN_AMOUNT in /home/booe/public_html/login/razorpay/pay.php on line 11
+[05-Jan-2021 12:28:11 UTC] PHP Notice:  Undefined index: uid in /home/booe/public_html/login/razorpay/pay.php on line 12
+[05-Jan-2021 12:28:12 UTC] PHP Fatal error:  Uncaught Razorpay\Api\Errors\BadRequestError: The amount must be atleast INR 1.00 in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php:120
+Stack trace:
+#0 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(90): Razorpay\Api\Request->processError(Array, 400, Object(Requests_Response))
+#1 /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php(44): Razorpay\Api\Request->checkErrors(Object(Requests_Response))
+#2 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(59): Razorpay\Api\Request->request('POST', 'https://api.raz...', Array)
+#3 /home/booe/public_html/login/razorpay/razorpay-php/src/Entity.php(15): Razorpay\Api\Entity->request('POST', 'orders/', Array)
+#4 /home/booe/public_html/login/razorpay/razorpay-php/src/Order.php(12): Razorpay\Api\Entity->create(Array)
+#5 /home/booe/public_html/login/razorpay/pay.php(44): Razorpay\Api\Order->create(Array)
+#6 {main}
+  thrown in /home/booe/public_html/login/razorpay/razorpay-php/src/Request.php on line 120
