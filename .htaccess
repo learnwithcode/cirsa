@@ -2,7 +2,7 @@
     RewriteEngine On
 RewriteCond %{SERVER_PORT} 80
 #RewriteRule ^(.*)$ https://goonhelp.com/$1 [R,L]
-    RewriteBase /tomarsir/
+    RewriteBase /
 
     #Removes access to the system folder by users.
     #Additionally this will allow you to create a System.php controller,

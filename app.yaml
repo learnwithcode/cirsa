@@ -1,7 +1,16 @@
 runtime: php82
 
 env_variables:
+  APP_BASE_URL: "https://navirahomes.appspot.com/"
   DB_USER: cirsa
   DB_PASS: 12345@Cirsa
   DB_NAME: cirsa
   INSTANCE_UNIX_SOCKET: /cloudsql/navirahomes:asia-southeast1:cirsa
+
+
+handlers:
+  - url: /assets
+    static_dir: assets
+
+  - url: /.*
+    script: auto

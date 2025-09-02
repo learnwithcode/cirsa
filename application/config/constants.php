@@ -71,7 +71,8 @@ define("ADMIN_Name","Admin Login");
 define("ADMIN_FOLDER","admin");
 define("MEMBER_FOLDER","userpanel");
 define("COURIER_FOLDER","courier");                                        //tomarsir/
-define("BASE_PATH",($_SERVER['HTTP_HOST']=="localhost")? 'http://localhost/':'https://' . $_SERVER['HTTP_HOST'].'/tomarsir/');
+// define("BASE_PATH",($_SERVER['HTTP_HOST']=="localhost")? 'http://localhost/':'https://' . $_SERVER['HTTP_HOST'].'/');
+define("BASE_PATH", getenv('APP_BASE_URL') ?: 'http://localhost:8000/');
 define("LOGO",BASE_PATH."theme/images/logo.png");
 define("MEMBER_PATH",BASE_PATH.MEMBER_FOLDER."/");
 define("ADMIN_PATH",BASE_PATH.ADMIN_FOLDER."/");
