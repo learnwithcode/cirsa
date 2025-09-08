@@ -12,3 +12,4 @@ steps:
 
 # Keep build timeout to 20 minutes
 timeout: '1200s'
+
