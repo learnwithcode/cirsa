@@ -1,0 +1,58 @@
+# cloudbuild.yaml
+# CI/CD pipeline for CodeIgniter (PHP) on App Engine Standard
+
+options:
+  machineType: "E2_SMALL"
+
+steps:
+  # Step 1: Show PHP version
+  - name: 'gcr.io/cloud-builders/php'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        php -v
+        echo "✅ PHP ready"
+
+  # Step 2: Install Composer if needed
+  - name: 'gcr.io/cloud-builders/php'
+    id: 'composer'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        if [ -f composer.json ]; then
+          echo "Installing Composer dependencies..."
+          if ! command -v composer >/dev/null 2>&1; then
+            curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+          fi
+          composer install --no-dev --prefer-dist --no-interaction
+        else
+          echo "No composer.json found, skipping composer install."
+        fi
+
+  # Step 3: Run PHPUnit tests (optional)
+  - name: 'gcr.io/cloud-builders/php'
+    id: 'phpunit'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        if [ -f phpunit.xml ] || [ -f phpunit.xml.dist ]; then
+          echo "Running PHPUnit tests..."
+          vendor/bin/phpunit --configuration phpunit.xml || true
+        else
+          echo "No phpunit config found, skipping tests."
+        fi
+
+  # Step 4: Deploy to App Engine
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'deploy'
+    args:
+      - 'app'
+      - 'deploy'
+      - 'app.yaml'
+      - '--quiet'
+
+# Timeout (20 minutes)
+timeout: '1200s'
