@@ -1,0 +1,15 @@
+# cloudbuild.yaml
+# Minimal Cloud Build pipeline for App Engine deploys (CodeIgniter PHP)
+
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'deploy'
+    args:
+      - 'app'
+      - 'deploy'
+      - 'app.yaml'
+      - '--quiet'
+
+# Keep build timeout to 20 minutes
+timeout: '1200s'
+
