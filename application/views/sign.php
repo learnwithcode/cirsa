@@ -5,7 +5,7 @@ $userId = $model->generateUserId();
 $form_data = $this->input->post();
 
 $segment = $this->uri->uri_to_assoc(1);
-$Page = $_REQUEST[page]; if($Page == "" or $Page <=0){$Page=1;}
+ 
 
 $spr_user_id  = $this->uri->segment(2);         
 $side  = $this->uri->segment(3);    
