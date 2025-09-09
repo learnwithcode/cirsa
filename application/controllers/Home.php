@@ -94,7 +94,7 @@ class Home extends MY_Controller {
 	}
 		public function sign()
 	{
-		
+		die('sssssssssssssssssssssss');
 		$this->load->view('sign');
 	}
 	public function news()
