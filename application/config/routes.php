@@ -135,9 +135,7 @@ $route['Airdrop/(.*)'] = 'home/airdrop';
 $route['Airdrop'] = 'home/airdrop';
 $route['sign-up/(.*)'] = 'home/sign';
 $route['sign-up'] = 'home/sign';
-//$route['default_controller'] = 'home/login';
-
-$route['default_controller'] = 'home/sign'; // for test
+$route['default_controller'] = 'home/login';
 $route['about-us'] = 'home/about';
  
 $route['services'] = 'home/services';

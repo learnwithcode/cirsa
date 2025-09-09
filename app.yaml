@@ -17,8 +17,8 @@ automatic_scaling:
 
 
 handlers:
-  - url: /assets
-    static_dir: assets
+  - url: /userassets
+    static_dir: userassets
 
   - url: /.*
     script: auto
