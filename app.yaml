@@ -20,11 +20,9 @@ handlers:
   - url: /userassets
     static_dir: userassets
 
-
   - url: /assets
     static_dir: assets
-  # - url: /.*
-  #   script: auto
 
-    - url: /.*
+  # Catch-all for CodeIgniter routes
+  - url: /.*
     script: index.php
