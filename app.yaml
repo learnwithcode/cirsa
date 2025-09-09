@@ -8,6 +8,7 @@ env_variables:
   INSTANCE_UNIX_SOCKET: /cloudsql/navirahomes:asia-southeast1:cirsa
 
 
+
 handlers:
   - url: /assets
     static_dir: assets
