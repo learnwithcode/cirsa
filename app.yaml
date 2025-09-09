@@ -23,5 +23,13 @@ handlers:
   # - url: /.*
   #   script: auto
 
+   # --- Block system/ and application/ access (same as .htaccess rule) ---
+  - url: /system/.*
+    script: index.php
+
+  - url: /application/.*
+    script: index.php
+
+  # --- Dynamic requests → send to index.php ---
   - url: /.*
     script: index.php
