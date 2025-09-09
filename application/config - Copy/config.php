@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set('Asia/Kolkata');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -22,7 +25,8 @@ date_default_timezone_set('Asia/Kolkata');
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
 |
-*/
+*/                                                                           //tomarsir/
+// $config['base_url'] = ($_SERVER['HTTP_HOST']=="localhost")? 'http://localhost/':'https://' . $_SERVER['HTTP_HOST'].'/';
 $config['base_url'] = getenv('APP_BASE_URL') ?: 'http://localhost:8000/';
 
 /*
@@ -367,6 +371,7 @@ $config['encryption_key'] = 'kaWs@13KaS#@$SzDS@#$^#!!';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
+$config['sess_driver'] = 'database';
 $config['sess_cookie_name']		= 'sp_session';
 $config['sess_expiration']		= 14400; #7200/60
 $config['sess_expire_on_close']	= TRUE;
@@ -376,6 +381,8 @@ $config['sess_table_name']		= 'tbl_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= FALSE;
 $config['sess_time_to_update']	= 7200;
+$config['sess_save_path'] = 'tbl_sessions';   // your table
+$config['sess_regenerate_destroy'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -393,10 +400,10 @@ $config['sess_time_to_update']	= 7200;
 |
 */
 $config['cookie_prefix']	= '';
-$config['cookie_domain']	= '';
+$config['cookie_domain'] = '.appspot.com';
 $config['cookie_path']		= '/';
-$config['cookie_secure']	= FALSE;
-$config['cookie_httponly'] 	= FALSE;
+$config['cookie_secure']	= TRUE;
+$config['cookie_httponly'] 	= TRUE;
 
 /*
 |--------------------------------------------------------------------------
