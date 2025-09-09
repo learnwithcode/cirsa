@@ -25,6 +25,7 @@ class Login extends MY_Controller {
 	}
 	
 	public function loginhandler(){
+		die('dddddddddd');
 		$config = new SqlModel();
 		$form_data = $this->input->post();
 					 $model = new OperationModel();
