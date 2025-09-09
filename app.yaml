@@ -20,5 +20,8 @@ handlers:
   - url: /userassets
     static_dir: userassets
 
+  # - url: /.*
+  #   script: auto
+
   - url: /.*
-    script: auto
+    script: index.php
