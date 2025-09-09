@@ -20,6 +20,9 @@ handlers:
   - url: /userassets
     static_dir: userassets
 
+
+  - url: /assets
+    static_dir: assets
   # - url: /.*
   #   script: auto
 
