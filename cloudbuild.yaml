@@ -7,7 +7,7 @@ steps:
     args: ["app", "deploy", "app.yaml", "--quiet"]
 
 # Use the default Cloud Build service account
-serviceAccount: "projects/navirahomes/serviceAccounts/cloudbuildserviceaccount@navirahomes.iam.gserviceaccount.com"
+serviceAccount: "projects/navirahomes/serviceAccounts/1012736884546@cloudbuild.gserviceaccount.com"
 
 # Avoid default logs bucket issue → force Cloud Logging
 options:
