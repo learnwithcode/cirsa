@@ -39,7 +39,7 @@
                                       <p id="error-msg"></p>
 					  <form name="form-login" id="form-login"  class="login-signup-form form-login" action="<?php echo generateSeoUrl("user","loginuser",array()); ?>" method="post">
                                         <div class="form-group">
-                                            <label class="mb-1 text-white"><strong>Member ID for Test</strong></label>
+                                            <label class="mb-1 text-white"><strong>Member ID</strong></label>
                                             <input id="user_name_login"  name="user_name_login" class="form-control" type="text" placeholder="Enter Your Member ID" required>
                                         </div>
                                         <div class="form-group">
