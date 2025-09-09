@@ -2,13 +2,17 @@
 # Minimal Cloud Build pipeline for App Engine deploys (CodeIgniter PHP)
 
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', 'app.yaml', '--quiet']
-serviceAccount: 'cloudbuildserviceaccount@navirahomes.iam.gserviceaccount.com'
-logsBucket: 'gs://navirahomes-cloudbuild-logs-1757338735'   # replace with your bucket
+  # Step 1: Deploy to App Engine
+  - name: gcr.io/cloud-builders/gcloud
+    args: ["app", "deploy", "app.yaml", "--quiet"]
+
+# Use the default Cloud Build service account
+serviceAccount: "projects/navirahomes/serviceAccounts/1012736884546@cloudbuild.gserviceaccount.com"
+
+# Avoid default logs bucket issue → force Cloud Logging
 options:
-  logging: GCS_ONLY
-timeout: '1200s'
+  logging: CLOUD_LOGGING_ONLY
+
 
 
 
