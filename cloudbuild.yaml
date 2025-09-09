@@ -4,7 +4,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.yaml', '--quiet']
-serviceAccount: 'navirahomes@appspot.gserviceaccount.com'
+serviceAccount: '1012736884546@cloudbuild.gserviceaccount.com'
 logsBucket: 'gs://navirahomes-cloudbuild-logs-1757338735'   # replace with your bucket
 options:
   logging: GCS_ONLY
