@@ -1537,7 +1537,7 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
             $response = [
                 "status"  => "success",
                 "message" => "Login successful",
-                "redirect" => base_url("home/dashboard")
+                "redirect" => base_url("userpanel/dashboard")
             ];
         }
 
