@@ -1527,10 +1527,15 @@ public function loginuser() {
         "user_password" => $password
     ]);
 
-    // 🔹 Debugging: SQL query print करना
-    log_message("debug", "Login Query: " . $this->db->last_query());
-    // अगर सीधे browser पर देखना चाहते हो
-    // echo $this->db->last_query(); exit;
+    // 🔹 Query string print karo
+    echo "<pre>SQL: " . $this->db->last_query() . "</pre>";
+
+    // 🔹 Result print karo
+    $result = $query->result_array();
+    echo "<pre>RESULT: ";
+    print_r($result);
+    echo "</pre>";
+    exit; // debugging ke liye stop
 
     $user = $query->row_array();
 
@@ -1548,7 +1553,6 @@ public function loginuser() {
 
     echo json_encode($response);
 }
-
 	public function registerajaxold(){
 		$model = new OperationModel();
 		$form_data = $this->input->get();		
