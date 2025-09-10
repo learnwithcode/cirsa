@@ -1512,10 +1512,13 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 	public function loginuser(){
 	    SESSION_START();
 	    //$_SESSION['CAPTCHA_CODE'];
-		$user_name_login = $this->input->get("user_name_login");
-		$user_password_login = $this->input->get("user_password_login");
-			$captcha = $this->input->get("captcha");
-				$captcha1 = $this->input->get("captcha1");
+     $form = $this->input->post();
+
+     PrintR($form);die;
+		$user_name_login = $this->input->post("user_name_login");
+		$user_password_login = $this->input->post("user_password_login");
+			// $captcha = $this->input->get("captcha");
+			// 	$captcha1 = $this->input->get("captcha1");
 //	$user_name_login = 	mysql_real_escape_string($user_name_login);
 //	$user_password_login = 	mysql_real_escape_string($user_password_login);
 		 $model = new OperationModel();
