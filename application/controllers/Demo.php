@@ -3,15 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Demo extends CI_Controller {
 
-        public function __construct(){
-      //Call the Model constructor
-       parent::__construct();
-       $this->load->library('parser');
-       $this->load->view('captcha/securimage');
-       
-    }
-    
-
     public function index()
     {
         $this->load->view('welcome_message');
