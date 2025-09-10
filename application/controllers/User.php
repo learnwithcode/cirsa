@@ -6,8 +6,8 @@ class User extends MY_Controller {
 	public function __construct(){
 	  //Call the Model constructor
 	   parent::__construct();
-	   $this->load->library('parser');
-	   $this->load->view('captcha/securimage');
+	   // $this->load->library('parser');
+	   // $this->load->view('captcha/securimage');
 	   
 	}
 	
