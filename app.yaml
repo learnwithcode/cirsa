@@ -23,6 +23,9 @@ handlers:
   - url: /assets
     static_dir: assets
 
+    http_headers:
+      Access-Control-Allow-Origin: "*"
+
   # Catch-all for CodeIgniter routes
   - url: /.*
     script: index.php
