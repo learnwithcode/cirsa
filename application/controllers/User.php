@@ -1602,15 +1602,15 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 				}
 				}else{
 					$AR_RT['ErrorDtl']="Invalid username & password ";
-					$AR_RT['ErrorMsg']="invalid";
+					$AR_RT['ErrorMsg']="invalid 1";
 				}
 			}else{
 				$AR_RT['ErrorDtl']="Invalid username & password ";
-				$AR_RT['ErrorMsg']="invalid";
+				$AR_RT['ErrorMsg']="invalid 2";
 			}
 		}else{
 			$AR_RT['ErrorDtl']="Invalid username & passworsssd ";
-			$AR_RT['ErrorMsg']="invalid";
+			$AR_RT['ErrorMsg']="invalid 3";
 		}
 	
 		    

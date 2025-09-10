@@ -3,10 +3,7 @@
 //PrintR($_SESSION['CAPTCHA_CODE']);
 //echo $_SESSION['CAPTCHA_CODE'];
 
-$member_id =1;
-$memberdetailssss = $model->getMemberdetail($member_id);
 
-PrintR($memberdetailssss); die('ssssssssssss');
 ?> 
 <!DOCTYPE html>
 <html lang="en" class="h-100">
