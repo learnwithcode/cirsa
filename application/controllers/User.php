@@ -1510,8 +1510,6 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 	}
 	
 	public function loginuser(){
-
-    die('ssssssss');
 	    SESSION_START();
 	    //$_SESSION['CAPTCHA_CODE'];
 		$user_name_login = $this->input->get("user_name_login");
