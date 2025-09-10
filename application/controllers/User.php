@@ -1509,103 +1509,100 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 		$this->load->view('forgotpassword',$data);
 	}
 	
-	public function loginuser()
-{
-    // POST/GET से input लेना (CodeIgniter का input class safe है)
-    $user_name_login     = $this->input->get_post("user_name_login", TRUE);
-    $user_password_login = $this->input->get_post("user_password_login", TRUE);
-    $captcha             = $this->input->get_post("captcha", TRUE);
-    $captcha1            = $this->input->get_post("captcha1", TRUE);
-    $rank_id             = $this->input->get_post("rank_id", TRUE);
+	public function loginuser() {
+    $response = ["ErrorMsg" => "invalid", "ErrorDtl" => "Invalid username or password"];
 
-    $AR_RT = [
-        'ErrorDtl' => "Invalid username & password",
-        'ErrorMsg' => "invalid"
-    ];
+    $user_name_login    = $this->input->get("user_name_login");
+    $user_password_login = $this->input->get("user_password_login");
+    $captcha            = $this->input->get("captcha");
+    $captcha1           = $this->input->get("captcha1");
 
-    // अगर config में login allow है
+    // Agar blank h user ya password
+    if (empty($user_name_login) || empty($user_password_login)) {
+        $response["ErrorDtl"] = "Please enter username and password";
+        echo json_encode($response);
+        return;
+    }
+
+    // Check if login allowed
     $model  = new OperationModel();
     $active = $model->getValue("USER_LOGIN");
-
     if ($active !== 'Y') {
-        $AR_RT['ErrorDtl'] = "System upgrading now, please try after 1 hour!";
-        echo json_encode($AR_RT);
+        $response["ErrorDtl"] = "System upgrading. Please try after 1 hour!";
+        echo json_encode($response);
         return;
     }
 
-    // input validation
-    if (empty($user_name_login) || empty($user_password_login)) {
-        $AR_RT['ErrorDtl'] = "Username और Password दोनों required हैं";
-        echo json_encode($AR_RT);
+    // User check
+    $user_name     = FCrtRplc($user_name_login);
+    $user_password = FCrtRplc($user_password_login);
+
+    $query = $this->db->query("
+        SELECT * FROM ".prefix."tbl_members 
+        WHERE (user_name='".$user_name."' OR user_id='".$user_name."' OR member_email='".$user_name."') 
+        AND user_password='".$user_password."' 
+        LIMIT 1
+    ");
+
+    $user = $query->row_array();
+
+    if (!$user || empty($user["member_id"])) {
+        $response["ErrorDtl"] = "Invalid username or password";
+        echo json_encode($response);
         return;
     }
 
-    // DB query बनाना
-    $this->db->where("(user_name = '$user_name_login' OR user_id = '$user_name_login' OR member_email = '$user_name_login')");
-    $this->db->where("user_password", $user_password_login);
-    if ($rank_id > 0) {
-        $this->db->where("rank_id >", 0);
-    } else {
-        $this->db->where("rank_id", 0);
-    }
-
-    $query     = $this->db->get(prefix . "tbl_members");
-    $fetchRow  = $query->row_array();
-
-    if (empty($fetchRow)) {
-        $AR_RT['ErrorDtl'] = "Invalid username & password";
-        echo json_encode($AR_RT);
-        return;
-    }
-
-    // captcha check
+    // Captcha check
     if ($captcha !== $captcha1) {
-        $AR_RT['ErrorDtl'] = "You entered wrong captcha code";
-        echo json_encode($AR_RT);
+        $response["ErrorDtl"] = "Wrong captcha code";
+        echo json_encode($response);
         return;
     }
 
-    // check if blocked
-    if ($fetchRow['block_sts'] === 'Y') {
-        $AR_RT['ErrorDtl'] = "Your ID has been blocked!";
-        echo json_encode($AR_RT);
+    // Blocked user
+    if ($user["block_sts"] === "Y") {
+        $response["ErrorDtl"] = "Your account has been blocked";
+        echo json_encode($response);
         return;
     }
 
-    // email verify check
-    if ($fetchRow['emailverify'] !== 'Y') {
-        $AR_RT['ErrorDtl'] = "Please verify your email first";
-        echo json_encode($AR_RT);
+    // Email verify check
+    if ($user["emailverify"] !== "Y") {
+        $response["ErrorDtl"] = "Please verify your email first";
+        echo json_encode($response);
         return;
     }
 
-    // ✅ अगर सब ठीक है → session create
-    $this->session->set_userdata('mem_id', $fetchRow['member_id']);
-    $this->session->set_userdata('user_id', $fetchRow['user_name']);
-    $this->session->set_userdata('last_log', $fetchRow['last_login']);
+    // Login success → set session
+    $this->session->set_userdata("mem_id", $user["member_id"]);
+    $this->session->set_userdata("user_id", $user["user_name"]);
+    $this->session->set_userdata("last_log", $user["last_login"]);
 
-    // login log save
-    $browser         = getBrowser();
-    $post_data = [
-        "member_id"      => $fetchRow['member_id'],
-        "user_name"      => $user_name_login,
-        "user_password"  => $user_password_login,
-        "member_ip"      => $this->input->ip_address(),
-        "operate_system" => $browser['name'],
-        "browser"        => $browser['browser'],
-        "browser_version"=> $browser['version'],
-        "log_sts"        => "S",
-        "login_time"     => date("Y-m-d H:i:s"),
-        "logout_time"    => date("Y-m-d H:i:s"),
+    // Save log
+    $browser  = getBrowser();
+    $log_data = [
+        "member_id"       => $user["member_id"],
+        "user_name"       => $user_name,
+        "user_password"   => $user_password,
+        "member_ip"       => $_SERVER["REMOTE_ADDR"],
+        "operate_system"  => $browser["name"],
+        "browser"         => $browser["browser"],
+        "browser_version" => $browser["version"],
+        "log_sts"         => "S",
+        "login_time"      => getLocalTime(),
+        "logout_time"     => getLocalTime()
     ];
-    $login_id = $this->SqlModel->insertRecord(prefix . "tbl_mem_logs", $post_data);
-    $this->session->set_userdata('login_id', $login_id);
+    $login_id = $this->SqlModel->insertRecord(prefix."tbl_mem_logs", $log_data);
+    $this->session->set_userdata("login_id", $login_id);
 
-    // success response
-    $AR_RT['ErrorDtl'] = "You have successfully logged in";
-    $AR_RT['ErrorMsg'] = "success";
+    // Success response
+    $response = [
+        "ErrorMsg" => "success",
+        "ErrorDtl" => "Login successful",
+        "redirect" => base_url("home/dashboard")
+    ];
 
-    echo json_encode($AR_RT);
+    echo json_encode($response);
 }
 
 	public function registerajaxold(){
