@@ -900,7 +900,7 @@ $dt['user_password'] = $user_password;
 		$today_date = InsertDate(getLocalTime());
 		$spr_user_id  = FCrtRplc($segment['register']);
 
-		$img = new Securimage();
+	//	$img = new Securimage();
 					
 		if($form_data['submitRegisterMember']==1 && $this->input->post()!=''){
 			$valid = $img->check($_POST["captcha_code"]);
@@ -1009,7 +1009,7 @@ $dt['user_password'] = $user_password;
 		$model = new OperationModel();
 		$form_data = $this->input->post();
 		$segment = $this->uri->uri_to_assoc(2);
-		$img = new Securimage();
+	//	$img = new Securimage();
 		if($form_data['loginMember']!='' && $this->input->post()!=''){
 			$user_name_login = FCrtRplc($form_data['user_name_login']);
 			$user_password_login  = FCrtRplc($form_data['user_password_login']);
@@ -1049,7 +1049,7 @@ $dt['user_password'] = $user_password;
 	}
 	public function forgotpassword(){
 		$model = new OperationModel();
-		$img = new Securimage();
+		//$img = new Securimage();
 		$form_data = $this->input->post();
 		$segment = $this->uri->uri_to_assoc(1);
 			$CONFIG_COMPANY_NAME = $model->getValue("CONFIG_COMPANY_NAME");	
