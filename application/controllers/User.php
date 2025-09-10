@@ -1537,8 +1537,8 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 			$oprt_ip = FCrtRplc($_SERVER['REMOTE_ADDR']);
 			$login_time = getLocalTime();
 			$logout_time = getLocalTime();
-			$AR_RT['ErrorDtl']="Invalid username & password";
-			$AR_RT['ErrorMsg']="invalid";
+			// $AR_RT['ErrorDtl']="Invalid username & password";
+			// $AR_RT['ErrorMsg']="invalid";
 			if($user_name!='' && $user_password!=''){
 			$user_name = FCrtRplc($user_name);
 			$user_password  = FCrtRplc($user_password);
