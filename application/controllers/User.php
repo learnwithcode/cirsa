@@ -1521,13 +1521,15 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
             return;
         }
 
-        // DB check
-        $query = $this->db->get_where("tbl_members", [
-            "user_name"     => $username,
-            "user_password" => $password
-        ]);
+      $this->db->where("(user_name='$user_name' OR user_id='$user_name' OR member_email='$user_name')");
+$this->db->where("user_password", $user_password);
 
-        $user = $query->row_array();
+$query = $this->db->get(prefix."tbl_members");
+$fetchRow = $query->row_array();
+
+echo $this->db->last_query(); // debug
+print_r($fetchRow); // debug
+exit;
 
         if ($user) {
             // Set session
