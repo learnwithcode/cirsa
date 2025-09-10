@@ -94,7 +94,7 @@ $("#loginForm").on("submit", function(e) {
     e.preventDefault();
     $.ajax({
         url: "https://navirahomes.appspot.com/user/loginuser",
-        type: "POST",
+        type: "GET",
         data: $(this).serialize(),
         success: function(res) {
             var data = JSON.parse(res);
