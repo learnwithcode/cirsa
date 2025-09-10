@@ -1510,101 +1510,39 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 	}
 	
 	public function loginuser() {
-    $response = ["ErrorMsg" => "invalid", "ErrorDtl" => "Invalid username or password"];
+        $response = ["status" => "error", "message" => "Invalid username or password"];
 
-    $user_name_login    = $this->input->get("user_name_login");
-    $user_password_login = $this->input->get("user_password_login");
-    $captcha            = $this->input->get("captcha");
-    $captcha1           = $this->input->get("captcha1");
+        $username = $this->input->post("username");
+        $password = $this->input->post("password");
 
-    // Agar blank h user ya password
-    if (empty($user_name_login) || empty($user_password_login)) {
-        $response["ErrorDtl"] = "Please enter username and password";
+        if (empty($username) || empty($password)) {
+            $response["message"] = "Please enter username and password";
+            echo json_encode($response);
+            return;
+        }
+
+        // DB check
+        $query = $this->db->get_where("tbl_members", [
+            "user_name"     => $username,
+            "user_password" => $password
+        ]);
+
+        $user = $query->row_array();
+
+        if ($user) {
+            // Set session
+            $this->session->set_userdata("mem_id", $user["member_id"]);
+            $this->session->set_userdata("user_id", $user["user_name"]);
+
+            $response = [
+                "status"  => "success",
+                "message" => "Login successful",
+                "redirect" => base_url("home/dashboard")
+            ];
+        }
+
         echo json_encode($response);
-        return;
     }
-
-    // Check if login allowed
-    $model  = new OperationModel();
-    $active = $model->getValue("USER_LOGIN");
-    if ($active !== 'Y') {
-        $response["ErrorDtl"] = "System upgrading. Please try after 1 hour!";
-        echo json_encode($response);
-        return;
-    }
-
-    // User check
-    $user_name     = FCrtRplc($user_name_login);
-    $user_password = FCrtRplc($user_password_login);
-
-    $query = $this->db->query("
-        SELECT * FROM ".prefix."tbl_members 
-        WHERE (user_name='".$user_name."' OR user_id='".$user_name."' OR member_email='".$user_name."') 
-        AND user_password='".$user_password."' 
-        LIMIT 1
-    ");
-
-    $user = $query->row_array();
-
-    if (!$user || empty($user["member_id"])) {
-        $response["ErrorDtl"] = "Invalid username or password";
-        echo json_encode($response);
-        return;
-    }
-
-    // Captcha check
-    if ($captcha !== $captcha1) {
-        $response["ErrorDtl"] = "Wrong captcha code";
-        echo json_encode($response);
-        return;
-    }
-
-    // Blocked user
-    if ($user["block_sts"] === "Y") {
-        $response["ErrorDtl"] = "Your account has been blocked";
-        echo json_encode($response);
-        return;
-    }
-
-    // Email verify check
-    if ($user["emailverify"] !== "Y") {
-        $response["ErrorDtl"] = "Please verify your email first";
-        echo json_encode($response);
-        return;
-    }
-
-    // Login success → set session
-    $this->session->set_userdata("mem_id", $user["member_id"]);
-    $this->session->set_userdata("user_id", $user["user_name"]);
-    $this->session->set_userdata("last_log", $user["last_login"]);
-
-    // Save log
-    $browser  = getBrowser();
-    $log_data = [
-        "member_id"       => $user["member_id"],
-        "user_name"       => $user_name,
-        "user_password"   => $user_password,
-        "member_ip"       => $_SERVER["REMOTE_ADDR"],
-        "operate_system"  => $browser["name"],
-        "browser"         => $browser["browser"],
-        "browser_version" => $browser["version"],
-        "log_sts"         => "S",
-        "login_time"      => getLocalTime(),
-        "logout_time"     => getLocalTime()
-    ];
-    $login_id = $this->SqlModel->insertRecord(prefix."tbl_mem_logs", $log_data);
-    $this->session->set_userdata("login_id", $login_id);
-
-    // Success response
-    $response = [
-        "ErrorMsg" => "success",
-        "ErrorDtl" => "Login successful",
-        "redirect" => base_url("home/dashboard")
-    ];
-
-    echo json_encode($response);
-}
-
 	public function registerajaxold(){
 		$model = new OperationModel();
 		$form_data = $this->input->get();		
