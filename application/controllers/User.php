@@ -1514,7 +1514,7 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 	    //$_SESSION['CAPTCHA_CODE'];
      $form = $this->input->post();
 
-     PrintR($form);die;
+     //PrintR($form);die;
 		$user_name_login = $this->input->post("user_name_login");
 		$user_password_login = $this->input->post("user_password_login");
 			// $captcha = $this->input->get("captcha");
