@@ -1509,42 +1509,46 @@ $email= str_pad(substr($email, 3), strlen($email), "*", STR_PAD_LEFT);
 		$this->load->view('forgotpassword',$data);
 	}
 	
-	public function loginuser() {
-        $response = ["status" => "error", "message" => "Invalid username or password"];
+public function loginuser() {
+    $response = ["status" => "error", "message" => "Invalid username or password"];
 
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
+    $username = $this->input->post("username");
+    $password = $this->input->post("password");
 
-        if (empty($username) || empty($password)) {
-            $response["message"] = "Please enter username and password";
-            echo json_encode($response);
-            return;
-        }
-
-      $this->db->where("(user_name='$user_name' OR user_id='$user_name' OR member_email='$user_name')");
-$this->db->where("user_password", $user_password);
-
-$query = $this->db->get(prefix."tbl_members");
-$fetchRow = $query->row_array();
-
-echo $this->db->last_query(); // debug
-print_r($fetchRow); // debug
-exit;
-
-        if ($user) {
-            // Set session
-            $this->session->set_userdata("mem_id", $user["member_id"]);
-            $this->session->set_userdata("user_id", $user["user_name"]);
-
-            $response = [
-                "status"  => "success",
-                "message" => "Login successful",
-                "redirect" => base_url("userpanel/dashboard")
-            ];
-        }
-
+    if (empty($username) || empty($password)) {
+        $response["message"] = "Please enter username and password";
         echo json_encode($response);
+        return;
     }
+
+    // DB check
+    $query = $this->db->get_where("tbl_members", [
+        "user_name"     => $username,
+        "user_password" => $password
+    ]);
+
+    // 🔹 Debugging: SQL query print करना
+    log_message("debug", "Login Query: " . $this->db->last_query());
+    // अगर सीधे browser पर देखना चाहते हो
+    // echo $this->db->last_query(); exit;
+
+    $user = $query->row_array();
+
+    if ($user) {
+        // Set session
+        $this->session->set_userdata("mem_id", $user["member_id"]);
+        $this->session->set_userdata("user_id", $user["user_name"]);
+
+        $response = [
+            "status"  => "success",
+            "message" => "Login successful",
+            "redirect" => base_url("userpanel/dashboard")
+        ];
+    }
+
+    echo json_encode($response);
+}
+
 	public function registerajaxold(){
 		$model = new OperationModel();
 		$form_data = $this->input->get();		
